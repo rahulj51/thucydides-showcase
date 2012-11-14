@@ -41,7 +41,7 @@ public class HomePage extends PageObject {
     }
 
     public List<String> getExactMatches() {
-        WebElement definitionList = getDriver().findElement(By.xpath("//p[contains(text(),'Exact matches')]/following-sibling::table"));
+        WebElement definitionList = getDriver().findElement(By.xpath("//b[text()='Titles (Exact Matches)']//parent::p//following-sibling::table"));
         List<WebElement> results = definitionList.findElements(By.tagName("td"));
         return convert(results, toStrings());
     }
